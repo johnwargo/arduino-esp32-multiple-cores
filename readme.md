@@ -1,6 +1,6 @@
 # Arduino Multiple Cores
 
-
+This repository contains the source code for a very simple, but complete, example of how to configure an Arduino project for ESP32 to run separate tasks on each processor core.
 
 ***
 
