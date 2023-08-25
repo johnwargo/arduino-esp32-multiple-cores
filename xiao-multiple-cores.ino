@@ -8,6 +8,8 @@
 * https://johnwargo.com
 **********************************************************/
 
+// https://www.freertos.org/a00106.html
+
 TaskHandle_t Task0;
 TaskHandle_t Task1;
 
@@ -17,12 +19,14 @@ void setup() {
 
   //create a task that executes the Task0code() function, with priority 1 and executed on core 0
   xTaskCreatePinnedToCore(Task0code, "Task0", 10000, NULL, 1, &Task0, 0);
+  delay(500);
   //create a task that executes the Task0code() function, with priority 1 and executed on core 1
   xTaskCreatePinnedToCore(Task1code, "Task1", 10000, NULL, 1, &Task1, 1);
+  delay(500);
 }
 
 void loop() {
-  // nothing to do here, everything happens in the Tast1Code and Task2Code functions
+  // nothing to do here, everything happens in the Task0Code and Task1Code functions
   Serial.println("Loop");
   delay((int)random(1000, 3000));
 }
